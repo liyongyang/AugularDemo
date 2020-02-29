@@ -1,0 +1,40 @@
+<ul class="breadcrumb">
+  <li><a [routerLink]="['/']">主页 </a></li>
+  <li><a [routerLink]="['/products']">商城 </a></li>
+  <li class="active">商品详情</li>
+</ul>
+
+<!--  -->
+<div class="container">
+  <div class="details" *ngIf="product">
+    <ul>
+      <li>
+        <img class="item_img" src="{{product.imgUrl}}" alt="" srcset="">
+      </li>
+    </ul>
+    <ul class="details_info">
+      <li class="item_name">商品名:{{ product.name }}</li>
+      <li>分类：[ {{product.title}} ] </li>
+      <li class="item_price"><span>￥</span>{{product.price}} </li>
+      <li>卖家：{{product.seller}} </li>
+      <li>联系方式：{{product.contact}}</li>
+      <li>描述: {{ product.description }}</li>
+      <a id="item_more" (click)="addToCart(product)">
+        收藏
+      </a>
+    </ul>
+  </div>
+</div>
+
+<!-- <div *ngIf="product">
+  <li class="list-group-item">
+    <img src="{{product.imgUrl}}" alt="" srcset="">
+  </li>
+  <li class="list-group-item">商品名:{{ product.name }} </li>
+  <li class="list-group-item">分类：{{product.title}} </li>
+  <li class="list-group-item">价格: {{product.price}} </li>
+  <li class="list-group-item">卖家：{{product.seller}} </li>
+  <li class="list-group-item">有意联系：{{product.contact}}</li>
+  <li class="list-group-item">描述: {{ product.description }}</li>
+  <button (click)="addToCart(product)">Buy</button>
+</div> -->

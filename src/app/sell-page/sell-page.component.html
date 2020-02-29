@@ -1,0 +1,31 @@
+<ul class="breadcrumb">
+  <li><a [routerLink]="['/']">主页 </a></li>
+  <li><a [routerLink]="['/products']">商城 </a></li>
+  <li class="active">闲置上架</li>
+</ul>
+
+<!--  -->
+<div class="container">
+  <form class="bs-example bs-example-form sell_from" role="form">
+    <ul class="sell_info">
+      <li class="input-group input-group-lg"><input type="text" class="form-control item_name" placeholder="商品名">
+      </li>
+      <li class="input-group input-group-lg"><input type="text" class="form-control" placeholder="分类">
+      </li>
+      <li class="input-group input-group-lg"><input type="text" class="form-control" placeholder="价格[￥]">
+      </li>
+      <li class="input-group input-group-lg"><input type="text" class="form-control" placeholder="联系方式"></li>
+      <li class="input-group input-group-lg"><textarea type="text" class="form-control" placeholder="描述"></textarea>
+      </li>
+    </ul>
+    <ul>
+      <li class="input-group input-group-lg">
+        <!-- <img class="item_img" src="" alt="" srcset=""> -->
+        <div class="bg-default text-white item_img">
+          <a [routerLink]="['/']">上传图片</a>
+        </div>
+      </li>
+    </ul>
+    <button type="submit" id="item_more" (click)="addToMall(product)">发布上架</button>
+  </form>
+</div>

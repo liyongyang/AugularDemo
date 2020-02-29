@@ -1,0 +1,22 @@
+<div>
+  <nav class="navbar navbar-expand-sm bg-dark" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="active" [routerLink]="['/']">
+          <img src="../../assets/img/home/logo.jpg" />
+        </a>
+      </div>
+      <div>
+        <a class="nav navbar-brand" [routerLink]="['/products']">
+          商城
+        </a>
+      </div>
+      <a class="nav navbar-brand navbar-right" [routerLink]="['/cart']">
+        愿望单
+      </a>
+      <a (click)="toReg()" class="topBtn navbar-text navbar-brand navbar-right" [routerLink]="['/login']">
+        登录
+      </a>
+    </div>
+  </nav>
+</div>

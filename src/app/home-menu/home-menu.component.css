@@ -1,0 +1,36 @@
+.menu {
+  overflow: hidden;
+  height: 40px;
+  margin: 0 auto;
+  text-align: center;
+  color: rgb(63, 63, 63);
+  transition: height ease 0.5s;
+}
+
+.nav_head {
+  height: 40px;
+  border-bottom: #555 1px solid;
+
+}
+
+.menu:hover {
+  height: 200px;
+}
+
+.nav-list>span {
+  width: 120px;
+  text-align: center;
+  height: 200px;
+  display: inline-block;
+  font-weight: normal;
+  color: rgb(97, 97, 97);
+  font-size: 14px;
+  vertical-align: top;
+}
+
+.navi_title {
+  font-size: 16px;
+  line-height: 50px;
+  margin-top: 0;
+  cursor: pointer;
+}

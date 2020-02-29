@@ -1,0 +1,40 @@
+<h3>Cart</h3>
+
+<p>
+  <a routerLink="/shipping">Shipping Prices</a>
+</p>
+
+<div class="cart_item" *ngFor="let product of items">
+  <ul>
+    <li>
+      <img class="item_img" src="{{product.imgUrl}}" alt="" srcset="">
+    </li>
+  </ul>
+  <ul class="details_info">
+    <li class="item_name">商品名:{{ product.name }}</li>
+    <li>分类：[ {{product.title}} ] </li>
+    <li class="item_price"><span>￥</span>{{product.price}} </li>
+    <li>卖家：{{product.seller}} </li>
+    <li>联系方式：{{product.contact}}</li>
+    <li>描述: {{ product.description }}</li>
+    <a id="item_more" (click)="addToCart(product)">
+      取消收藏
+    </a>
+  </ul>
+</div>
+
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)">
+
+  <div>
+    <label>Name</label>
+    <input type="text" formControlName="name">
+  </div>
+
+  <div>
+    <label>Address</label>
+    <input type="text" formControlName="address">
+  </div>
+
+  <button class="button" type="submit">Purchase</button>
+
+</form>

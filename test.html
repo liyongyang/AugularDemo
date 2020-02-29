@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bootstrap 实例 - 倒置的导航栏</title>
+  <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- <script src="https://cdn.staticfile.org/jquery/2.1.1/jquery.min.js"></script> -->
+  <!-- <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+</head>
+
+<body>
+
+  <nav class="navbar navbar-inverse" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="active" href="#">
+          <img src="../../assets/img/home/logo.jpg" />
+        </a>
+      </div>
+      <div>
+        <a class="nav navbar-brand" href="#">
+          <img src="../../assets/img/icon/cart.png" alt="" srcset="">
+        </a>
+      </div>
+      <a class="nav navbar-brand navbar-right" href="#">
+        <img src="../../assets/img/icon/cart.png" alt="" srcset="">
+      </a>
+      <a class="navbar-text navbar-brand navbar-right" href="#">
+        <img src="../../assets/img/icon/zoom.png" alt="" srcset="">
+      </a>
+      <textarea name="" id="" cols="30" rows="10">
+        toReg() {
+        $("#log-wrap").css("display", "none");
+        $("#reg-wrap").css("display", "block");
+        }
+        toLog() {
+        $("#reg-wrap").css("display", "none");
+        $("#log-wrap").css("display", "block");
+        }
+
+        login() {
+        var name = $(".log_uerName").val();
+        var code = $(".log_userPwd").val();
+        if (name === "" || code === "") {
+        alert("请填写完整信息");
+        return;
+        }
+        var sendata = {
+        username: name,
+        password: code
+        };
+        $.ajax({
+        url: "http://localhost:8080/user/login",
+        dataType: "json",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify(sendata),
+        success: function(data) {
+        console.log(sendata);
+        console.log(data);
+        // localStorage.setItem("aa", JSON.stringify(username));
+        if (data.status === 200) {
+        window.location.href = "/index.html";
+        } else {
+        }
+        }
+        });
+        }
+        register() {
+        var name = $(".reg_username").val();
+        var code = $(".reg_password").val();
+        var phone = $(".reg_phone").val();
+        // var Intphone = parseInt(phone);
+        if (name === "" || phone === "" || code === "") {
+        alert("请填写完整信息");
+        return;
+        }
+        var sendata = {
+        username: name,
+        phone: phone,
+        password: code
+        };
+        $.ajax({
+        url: "http://localhost:8080/user/register",
+        dataType: "json",
+        type: "post",
+        contentType: "application/json",
+        data: JSON.stringify(sendata),
+        success: function(data) {
+        console.log(typeof phone);
+        console.log(sendata);
+        console.log(data);
+        if (data.status === 200) {
+        window.location.href = "/index.html";
+        } else {
+        }
+        }
+        });
+        }
+      </textarea>
+    </div>
+  </nav>
+
+</body>
+
+</html>

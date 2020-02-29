@@ -1,0 +1,22 @@
+<div class="products">
+  <div class="header">
+    <div class="products-title">nice_mall</div>
+    <div class="searchCom">
+      <app-search></app-search>
+    </div>
+  </div>
+  <app-home-menu></app-home-menu>
+  <div class="product">
+    <ul class="product_item" *ngFor="let product of products; index as productId">
+      <li>
+        <img class="item_img" src="{{product.imgUrl}}" alt="" srcset="">
+      </li>
+      <li class="item_name">{{ product.name }}</li>
+      <li>[ {{product.title}} ] </li>
+      <li class="item_price"><span>￥</span>{{product.price}} </li>
+      <a class="item_more" [title]="product.name + ' details'" [routerLink]="['/products/detail', productId]">
+        查看
+      </a>
+    </ul>
+  </div>
+</div>

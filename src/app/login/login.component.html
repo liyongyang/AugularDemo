@@ -1,0 +1,56 @@
+<div class="login">
+  <div class="wrapper">
+    <div class="content">
+      <div class="header">
+        <div class="logo">
+          <a href="index.html">
+          </a>
+        </div>
+      </div>
+      <div id="reg-wrap">
+        <form class="reg-form" name="LoginForm">
+          <div class="reg-title">注册</div>
+          <p>
+            <label for="username" class="label">用户名</label>
+            <input class="reg_username input" name="regname" type="text" autofocus />
+          </p>
+          <p>
+            <label for="password" class="label">密码</label>
+            <input class="reg_password input" type="password" name="regpwd" autofocus />
+          </p>
+
+
+          <label class="label">手机号</label>
+          <input class="reg_phone input" type="text" name="regtel" autofocus />
+          <div>
+            <button type="submit" name="regsubmit" class="submit" (click)="register()">注 册</button>
+          </div>
+
+
+          <div id="toLog" (click)="toLog()">
+            <span>去登录</span>
+            <span class="glyphicon glyphicon-menu-right"></span>
+          </div>
+        </form>
+      </div>
+      <div id="log-wrap">
+        <form class="log-form" name="LoginForm">
+          <div class="log-title">登录</div>
+          <label for="username" class="label">账号</label>
+          <input class="log_uerName input" type="text" name="username">
+          <div>
+            <label for="password" class="label">密 码</label>
+            <input name="password" type="password" class="log_userPwd input" />
+            <p>
+              <input class="submit" type="submit" name="submit" value="  确 定  " (click)="login()" />
+            </p>
+          </div>
+          <div id="toReg" (click)="toReg()">
+            创建用户 <span class="glyphicon glyphicon-menu-right"></span>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
